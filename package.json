@@ -1,0 +1,33 @@
+{
+  "name": "taskboard",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "description": "TaskBoard (Trello-style Kanban app) with React, TypeScript, Fastify, Prisma, and PostgreSQL",
+  "author": "Pranit Bose",
+  "license": "MIT",
+  "scripts": {
+    "prepare": "husky",
+    "dev:backend": "pnpm --filter backend dev",
+    "dev:frontend": "pnpm --filter frontend dev",
+    "prettier": "prettier . --check",
+    "prettier:fix": "prettier . --write"
+  },
+  "engines": {
+    "node": ">=22.16.0"
+  },
+  "packageManager": "pnpm@10.12.1",
+  "devDependencies": {
+    "@types/node": "^24.0.3",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.2",
+    "prettier": "^3.6.0",
+    "typescript": "^5.8.3"
+  },
+  "lint-staged": {
+    "**/*": [
+      "pnpm prettier:fix",
+      "git add ."
+    ]
+  }
+}

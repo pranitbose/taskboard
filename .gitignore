@@ -1,0 +1,65 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+pnpm-debug.log
+
+# Diagnostic reports (https://nodejs.org/api/report.html)
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# Dependency directories
+node_modules
+
+# Compiled output
+dist
+build
+
+# Testing
+coverage
+*.lcov
+
+# DOTENV environment variable files
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Optional npm cache
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Yarn v2
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
+
+# IDEs and editors
+.idea
+.vscode
+.history
+.project
+.classpath
+.settings
+*.launch
+*.sublime-workspace
+
+# Miscellaneous
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+.DS_Store
+.vite
+*/prisma/generated

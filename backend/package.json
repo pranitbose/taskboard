@@ -1,0 +1,28 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Fastify + Prisma + Zod + PostgreSQL backend for TaskBoard",
+  "author": "Pranit Bose",
+  "license": "MIT",
+  "main": "dist/main.js",
+  "scripts": {
+    "postinstall": "prisma generate",
+    "dev": "tsx watch src/main.ts",
+    "build": "tsc",
+    "start": "node dist/main.js"
+  },
+  "packageManager": "pnpm@10.12.1",
+  "dependencies": {
+    "@fastify/cors": "^11.0.1",
+    "@fastify/jwt": "^9.1.0",
+    "@prisma/client": "^6.10.1",
+    "fastify": "^5.4.0",
+    "zod": "^3.25.67"
+  },
+  "devDependencies": {
+    "fastify-plugin": "^5.0.1",
+    "prisma": "^6.10.1",
+    "tsx": "^4.20.3"
+  }
+}
