@@ -1,0 +1,60 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "description": "React + TypeScript frontend for TaskBoard",
+  "author": "Pranit Bose",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite --port 8080",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "prettier": "prettier . --check",
+    "prettier:fix": "prettier . --write",
+    "preview": "vite preview --port 8080",
+    "test": "vitest",
+    "test:coverage": "vitest run --coverage"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.29.0",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react": "^4.5.2",
+    "@vitest/eslint-plugin": "^1.2.7",
+    "eslint": "^9.29.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-import-resolver-typescript": "^4.4.3",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-jsdoc": "^51.1.2",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-promise": "^7.2.1",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "eslint-plugin-sonarjs": "^3.0.3",
+    "eslint-plugin-testing-library": "^7.5.3",
+    "globals": "^16.2.0",
+    "typescript-eslint": "^8.34.1",
+    "vite": "^6.3.5"
+  },
+  "browserslist": [
+    "> 0.2%",
+    "last 2 versions",
+    "Firefox ESR",
+    "not dead"
+  ],
+  "lint-staged": {
+    "**/*": [
+      "pnpm prettier:fix",
+      "pnpm lint",
+      "pnpm lint:fix",
+      "git add ."
+    ]
+  }
+}
