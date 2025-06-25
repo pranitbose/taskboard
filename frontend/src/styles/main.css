@@ -7,8 +7,7 @@
   html {
     font-family: var(--font-inter);
     body {
-      background-color: var(--color-background);
-      overflow: hidden;
+      overflow-x: hidden;
     }
   }
 }

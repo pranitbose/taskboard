@@ -4,7 +4,7 @@ type ErrorState = {
   title: string;
   description: string;
   showBackToHomeBtn: boolean;
-  icon: ElementType;
+  Icon: ElementType;
 };
 
 export type { ErrorState };

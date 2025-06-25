@@ -1,5 +1,5 @@
-import { Paths } from "@app/routes/constants";
 import { Button } from "@components/ui/button";
+import { Paths } from "@routes/constants";
 import { isRouteErrorResponse, Link, useRouteError } from "react-router";
 import { getErrorState } from "./utils/helpers";
 
@@ -11,13 +11,13 @@ const RootErrorBoundary = ({ errorStatus }: RootErrorBoundaryProps) => {
   const error = useRouteError();
   const status =
     errorStatus ?? (isRouteErrorResponse(error) ? error.status : null);
-  const { title, description, showBackToHomeBtn } = getErrorState(status);
+  const { Icon, title, description, showBackToHomeBtn } = getErrorState(status);
 
   return (
-    <main className="min-h-dvh flex flex-col items-center justify-center gap-2 px-4 overflow-y-auto">
-      {/* <icon className="text-6xl text-primary" /> */}
+    <main className="flex-1 w-full flex flex-col items-center justify-center gap-2 px-4 text-center">
+      <Icon className="text-primary size-14 mb-2" />
       <h1 className="text-2xl font-semibold">{title}</h1>
-      <p className="text-muted-foreground">{description}</p>
+      <p className="container text-muted-foreground">{description}</p>
       {showBackToHomeBtn && (
         <Button className="mt-4" asChild>
           <Link to={Paths.HOME} replace>

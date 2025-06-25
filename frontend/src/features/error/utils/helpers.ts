@@ -16,7 +16,7 @@ const getErrorState = (errorStatus: number | null): ErrorState => {
         description:
           "Sorry, we couldn't find the page you're looking for. It may have been moved or deleted.",
         showBackToHomeBtn: true,
-        icon: FileWarning
+        Icon: FileWarning
       };
     case AppErrorStatus.Unauthorized:
       return {
@@ -24,7 +24,7 @@ const getErrorState = (errorStatus: number | null): ErrorState => {
         description:
           "You're not logged in or your session has expired. Please log in to continue.",
         showBackToHomeBtn: false,
-        icon: ShieldAlert
+        Icon: ShieldAlert
       };
     case AppErrorStatus.Forbidden:
       return {
@@ -32,7 +32,7 @@ const getErrorState = (errorStatus: number | null): ErrorState => {
         description:
           "You don’t have the necessary permissions to view this content.",
         showBackToHomeBtn: true,
-        icon: Ban
+        Icon: Ban
       };
     case AppErrorStatus.ServiceUnavailable:
       return {
@@ -40,7 +40,7 @@ const getErrorState = (errorStatus: number | null): ErrorState => {
         description:
           "We're currently experiencing issues. Please try again in a few minutes.",
         showBackToHomeBtn: true,
-        icon: ServerCrash
+        Icon: ServerCrash
       };
     default:
       return {
@@ -48,7 +48,7 @@ const getErrorState = (errorStatus: number | null): ErrorState => {
         description:
           "An unexpected error occurred. Please refresh the page or try again later.",
         showBackToHomeBtn: true,
-        icon: TriangleAlert
+        Icon: TriangleAlert
       };
   }
 };
