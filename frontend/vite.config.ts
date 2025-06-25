@@ -4,20 +4,21 @@ import { dirname, resolve } from "path";
 import { fileURLToPath } from "url";
 import { defineConfig } from "vite";
 
-const rooDirname = dirname(fileURLToPath(import.meta.url));
+const rootDirname = dirname(fileURLToPath(import.meta.url));
 
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
-      "@app": resolve(rooDirname, "./src"),
-      "@assets": resolve(rooDirname, "./src/assets"),
-      "@components": resolve(rooDirname, "./src/components"),
-      "@hooks": resolve(rooDirname, "./src/hooks"),
-      "@routes": resolve(rooDirname, "./src/routes"),
-      "@styles": resolve(rooDirname, "./src/styles"),
-      "@utils": resolve(rooDirname, "./src/utils")
+      "@app": resolve(rootDirname, "./src"),
+      "@assets": resolve(rootDirname, "./src/assets"),
+      "@components": resolve(rootDirname, "./src/components"),
+      "@features": resolve(rootDirname, "./src/features"),
+      "@hooks": resolve(rootDirname, "./src/hooks"),
+      "@routes": resolve(rootDirname, "./src/routes"),
+      "@styles": resolve(rootDirname, "./src/styles"),
+      "@utils": resolve(rootDirname, "./src/utils")
     }
   }
 });

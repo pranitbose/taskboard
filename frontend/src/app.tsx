@@ -1,7 +1,9 @@
+import { router } from "@routes/config";
 import type { ReactElement } from "react";
+import { RouterProvider } from "react-router";
 
 const App = (): ReactElement => {
-  return <main className="text-center">Welcome to the App</main>;
+  return <RouterProvider router={router} />;
 };
 
 export { App };
