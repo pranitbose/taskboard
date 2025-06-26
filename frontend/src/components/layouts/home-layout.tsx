@@ -6,6 +6,7 @@ import {
 } from "@components/brand-logo";
 import { Footer } from "@components/footer";
 import type { ReactElement } from "react";
+import { Outlet } from "react-router";
 
 const HomeLayout = (): ReactElement => {
   return (
@@ -19,7 +20,9 @@ const HomeLayout = (): ReactElement => {
             </BrandLogo>
           </div>
           <div className="flex-1 flex items-center justify-center">
-            <div className="w-full max-w-xs">Form</div>
+            <div className="w-full max-w-xs">
+              <Outlet />
+            </div>
           </div>
         </div>
         <div className="bg-muted relative hidden lg:block">

@@ -1,4 +1,5 @@
 import { ErrorLayout, HomeLayout } from "@components/layouts";
+import { Login, SignUp } from "@features/auth";
 import { AppErrorStatus } from "@features/error/utils/constants";
 import { createBrowserRouter, Navigate, type RouteObject } from "react-router";
 import { PathBuilder, PathEndpoints, PathParams } from "./constants";
@@ -11,8 +12,17 @@ const routes: RouteObject[] = [
     errorElement: <ErrorLayout />,
     children: [
       {
-        index: true,
-        element: <HomeLayout />
+        element: <HomeLayout />,
+        children: [
+          {
+            index: true,
+            element: <Login />
+          },
+          {
+            path: PathEndpoints.SIGNUP,
+            element: <SignUp />
+          }
+        ]
       },
       {
         path: PathEndpoints.DASHBOARD,

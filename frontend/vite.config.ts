@@ -14,6 +14,7 @@ export default defineConfig({
       "@app": resolve(rootDirname, "./src"),
       "@assets": resolve(rootDirname, "./src/assets"),
       "@components": resolve(rootDirname, "./src/components"),
+      "@contexts": resolve(rootDirname, "./src/contexts"),
       "@features": resolve(rootDirname, "./src/features"),
       "@hooks": resolve(rootDirname, "./src/hooks"),
       "@routes": resolve(rootDirname, "./src/routes"),

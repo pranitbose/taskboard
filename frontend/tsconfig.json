@@ -9,6 +9,7 @@
       "@app/*": ["./src/*"],
       "@assets/*": ["./src/assets/*"],
       "@components/*": ["./src/components/*"],
+      "@contexts/*": ["./src/contexts/*"],
       "@features/*": ["./src/features/*"],
       "@hooks/*": ["./src/hooks/*"],
       "@routes/*": ["./src/routes/*"],

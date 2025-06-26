@@ -3,6 +3,7 @@ import { filter } from "@utils/object-helpers";
 const PathEndpoints = {
   HOME: "/",
   ERROR: "error",
+  SIGNUP: "signup",
   DASHBOARD: "dashboard",
   BOARDS: "boards",
   PROFILE: "profile",
@@ -17,6 +18,7 @@ const PathParams = {
 const Paths = {
   HOME: PathEndpoints.HOME,
   ERROR: `/${PathEndpoints.ERROR}`,
+  SIGNUP: `/${PathEndpoints.SIGNUP}`,
   DASHBOARD: `/${PathEndpoints.DASHBOARD}`,
   BOARDS: `/${PathEndpoints.BOARDS}`,
   PROFILE: `/${PathEndpoints.PROFILE}`,
@@ -32,7 +34,7 @@ const PathBuilder = {
 };
 
 const publicPathList = [Paths.ERROR];
-const protectedPathList = [Paths.HOME];
+const protectedPathList = [Paths.HOME, Paths.SIGNUP];
 
 const PrivatePaths = filter(
   Paths,
