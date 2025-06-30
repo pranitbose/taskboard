@@ -20,7 +20,7 @@ const HomeLayout = (): ReactElement => {
             </BrandLogo>
           </div>
           <div className="flex-1 flex items-center justify-center">
-            <div className="w-full max-w-xs">
+            <div className="w-full max-w-sm">
               <Outlet />
             </div>
           </div>

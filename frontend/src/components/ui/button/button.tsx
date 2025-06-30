@@ -26,4 +26,4 @@ const Button = ({
   );
 };
 
-export { Button };
+export { Button, type ButtonProps };
