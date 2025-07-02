@@ -2,6 +2,7 @@ import { Button, type ButtonProps } from "@components/ui/button";
 import {
   Form,
   FormControl,
+  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -86,6 +87,8 @@ const AuthFormLabel = FormLabel;
 
 const AuthFormControl = FormControl;
 
+const AuthFormDescription = FormDescription;
+
 const AuthFormMessage = FormMessage;
 
 const AuthFormEmailInput = ({ ...props }: InputProps) => (
@@ -131,6 +134,7 @@ export {
   AuthFooterText,
   AuthForm,
   AuthFormControl,
+  AuthFormDescription,
   AuthFormEmailInput,
   AuthFormField,
   AuthFormItem,

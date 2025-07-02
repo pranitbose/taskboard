@@ -3,6 +3,7 @@ const Regex = {
   containsLowercase: /[a-z]/,
   containsDigit: /\d/,
   containsSpecialCharacter: /[!@#$%^&*]/,
+  name: /^\p{L}+(?:[ '-]\p{L}+)*$/u,
   noWhitespace: /^\S*$/
 } as const;
 

@@ -1,4 +1,3 @@
-import { Paths } from "@routes/constants";
 import {
   LoginDescription,
   LoginFooterLink,
@@ -22,7 +21,7 @@ const Login = () => {
       <LoginForm />
       <LoginFooterText>
         Don&apos;t have an account?&nbsp;
-        <LoginFooterLink to={Paths.SIGNUP}>Sign up</LoginFooterLink>
+        <LoginFooterLink>Sign up</LoginFooterLink>
       </LoginFooterText>
     </LoginRoot>
   );

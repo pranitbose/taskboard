@@ -1,5 +1,8 @@
 import { zodResolver } from "@hookform/resolvers/zod";
+import { Paths } from "@routes/constants";
+import type { ReactNode } from "react";
 import { useForm, type SubmitHandler } from "react-hook-form";
+import { getDefaultValuesLoginForm } from "../../utils/form-helpers";
 import {
   LoginFormSchema,
   type LoginFormValues
@@ -31,7 +34,9 @@ const LoginDescription = AuthDescription;
 
 const LoginForm = () => {
   const form = useForm<LoginFormValues>({
-    resolver: zodResolver(LoginFormSchema)
+    mode: "onChange",
+    resolver: zodResolver(LoginFormSchema),
+    defaultValues: getDefaultValuesLoginForm()
   });
 
   const handleLogin: SubmitHandler<LoginFormValues> = () => {};
@@ -67,7 +72,9 @@ const LoginForm = () => {
 
 const LoginFooterText = AuthFooterText;
 
-const LoginFooterLink = AuthFooterLink;
+const LoginFooterLink = ({ children }: { children: ReactNode }) => (
+  <AuthFooterLink to={Paths.SIGNUP}>{children}</AuthFooterLink>
+);
 
 export {
   LoginDescription,
