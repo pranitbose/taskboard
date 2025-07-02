@@ -58,7 +58,7 @@ const AuthDescription = ({
 type AuthFormProps<TFormValues extends FieldValues> = {
   form: UseFormReturn<TFormValues>;
   onSubmit: SubmitHandler<TFormValues>;
-} & ComponentProps<"form">;
+} & Omit<ComponentProps<"form">, "onSubmit">;
 
 const AuthForm = <TFormValues extends FieldValues>({
   form,

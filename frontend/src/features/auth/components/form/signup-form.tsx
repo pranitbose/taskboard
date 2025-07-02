@@ -60,6 +60,17 @@ const SignUpForm = () => {
           </AuthFormItem>
         )}
       />
+      <AuthFormField
+        control={form.control}
+        name="confirmPassword"
+        render={({ field }) => (
+          <AuthFormItem className="gap-3">
+            <AuthFormLabel>Confirm password</AuthFormLabel>
+            <AuthFormPasswordInput {...field} />
+            <AuthFormMessage />
+          </AuthFormItem>
+        )}
+      />
       <AuthSubmitButton>Sign up</AuthSubmitButton>
     </AuthForm>
   );
