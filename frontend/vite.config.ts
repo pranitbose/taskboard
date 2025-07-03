@@ -18,6 +18,7 @@ export default defineConfig({
       "@features": resolve(rootDirname, "./src/features"),
       "@hooks": resolve(rootDirname, "./src/hooks"),
       "@routes": resolve(rootDirname, "./src/routes"),
+      "@services": resolve(rootDirname, "./src/services"),
       "@styles": resolve(rootDirname, "./src/styles"),
       "@utils": resolve(rootDirname, "./src/utils")
     }

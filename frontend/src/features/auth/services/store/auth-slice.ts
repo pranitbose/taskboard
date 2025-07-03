@@ -1,15 +1,13 @@
-import { type StateCreator } from "zustand";
+import type { StateSlice } from "@app/types/store";
+import type { AuthSlice } from "../../types/auth-slice";
 
-type AuthSlice = {
-  accessToken: string | null;
-  setAccessToken: (token: string | null) => void;
-};
-
-const createAuthSlice: StateCreator<AuthSlice, [], [], AuthSlice> = set => ({
+const createAuthSlice: StateSlice<AuthSlice> = set => ({
   accessToken: null,
   setAccessToken: token => {
-    set(() => ({ accessToken: token }));
+    set(state => {
+      state.auth.accessToken = token;
+    });
   }
 });
 
-export { createAuthSlice, type AuthSlice };
+export { createAuthSlice };

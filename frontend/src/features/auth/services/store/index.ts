@@ -1,1 +1,1 @@
-export { createAuthSlice, type AuthSlice } from "./auth-slice";
+export { createAuthSlice } from "./auth-slice";

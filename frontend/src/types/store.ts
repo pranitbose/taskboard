@@ -1,5 +1,10 @@
-import type { AuthSlice } from "@features/auth/services/store";
+import type { AuthSlice } from "@features/auth/types/auth-slice";
+import type { StateCreator } from "zustand";
 
-type AppState = AuthSlice;
+type AppState = {
+  auth: AuthSlice;
+};
 
-export type { AppState };
+type StateSlice<T> = StateCreator<AppState, [["zustand/immer", never]], [], T>;
+
+export type { AppState, StateSlice };

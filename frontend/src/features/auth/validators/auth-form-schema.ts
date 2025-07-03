@@ -11,6 +11,9 @@ const EmailSchema = z.email({
 
 const PasswordSchema = z
   .string("Password is required.")
+  .refine(password => !!password, {
+    error: "Email is required."
+  })
   .min(8, {
     error: issue =>
       `Password must be at least ${String(issue.minimum)} characters long.`
@@ -24,6 +27,9 @@ const PasswordSchema = z
 const FirstNameSchema = z
   .string("First name is required.")
   .trim()
+  .refine(name => !!name, {
+    error: "First name is required."
+  })
   .min(2, {
     error: issue =>
       `First name must be at least ${String(issue.minimum)} characters long.`
@@ -40,6 +46,9 @@ const FirstNameSchema = z
 const LastNameSchema = z
   .string("Last name is required.")
   .trim()
+  .refine(name => !!name, {
+    error: "Last name is required."
+  })
   .min(2, {
     error: issue =>
       `Last name must be at least ${String(issue.minimum)} characters long.`
@@ -65,8 +74,16 @@ const SignUpFormSchema = z
     firstName: FirstNameSchema,
     lastName: LastNameSchema,
     ...AuthFormSchema.shape,
-    confirmPassword: z.string("Confirm password is required."),
-    agreeTerms: z.boolean("You must agree to the terms and conditions.")
+    confirmPassword: z
+      .string("Confirm password is required.")
+      .refine(password => !!password, {
+        error: "Confirm password is required."
+      }),
+    agreeTerms: z
+      .boolean("You must agree to the terms and conditions.")
+      .refine(terms => terms, {
+        error: "You must agree to the terms and conditions."
+      })
   })
   .check(validatePasswordsMatch);
 
