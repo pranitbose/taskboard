@@ -3,9 +3,11 @@ import type { AuthSlice } from "../../types/auth-slice";
 
 const createAuthSlice: StateSlice<AuthSlice> = set => ({
   accessToken: null,
-  setAccessToken: token => {
+  refreshToken: null,
+  setTokens: authTokens => {
     set(state => {
-      state.auth.accessToken = token;
+      state.auth.accessToken = authTokens.accessToken;
+      state.auth.refreshToken = authTokens.refreshToken;
     });
   }
 });

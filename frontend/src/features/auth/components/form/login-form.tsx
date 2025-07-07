@@ -2,6 +2,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Paths } from "@routes/constants";
 import type { ReactNode } from "react";
 import { useForm, type SubmitHandler } from "react-hook-form";
+import { useLogin } from "../../services/api";
 import { getDefaultValuesLoginForm } from "../../utils/form-helpers";
 import {
   LoginFormSchema,
@@ -38,8 +39,11 @@ const LoginForm = () => {
     resolver: zodResolver(LoginFormSchema),
     defaultValues: getDefaultValuesLoginForm()
   });
+  const { mutate: login } = useLogin();
 
-  const handleLogin: SubmitHandler<LoginFormValues> = () => {};
+  const handleLogin: SubmitHandler<LoginFormValues> = formValues => {
+    login(formValues);
+  };
 
   return (
     <AuthForm<LoginFormValues> form={form} onSubmit={handleLogin}>

@@ -25,6 +25,7 @@ coverage
 
 # DOTENV environment variable files
 .env
+.env.localhost.local
 .env.development.local
 .env.test.local
 .env.production.local
@@ -62,4 +63,5 @@ pnpm-lock.yaml
 yarn.lock
 .DS_Store
 .vite
+mockServiceWorker.js
 */prisma/generated

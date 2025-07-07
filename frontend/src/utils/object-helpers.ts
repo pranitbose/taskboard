@@ -11,4 +11,7 @@ const filter = <T extends Record<string, unknown>>(
   return result;
 };
 
-export { filter };
+const isObject = (val: unknown): val is Record<string, unknown> =>
+  typeof val === "object" && val !== null && !Array.isArray(val);
+
+export { filter, isObject };

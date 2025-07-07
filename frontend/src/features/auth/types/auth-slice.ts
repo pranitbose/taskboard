@@ -1,9 +1,12 @@
+import type { AuthTokens } from "../types/tokens";
+
 type AuthSliceState = {
   accessToken: string | null;
+  refreshToken: string | null;
 };
 
 type AuthSliceActions = {
-  setAccessToken: (token: AuthSliceState["accessToken"]) => void;
+  setTokens: (authTokens: AuthTokens) => void;
 };
 
 type AuthSlice = AuthSliceState & AuthSliceActions;

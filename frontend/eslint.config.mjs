@@ -1,4 +1,5 @@
 import js from "@eslint/js";
+import queryPlugin from "@tanstack/eslint-plugin-query";
 import vitestPlugin from "@vitest/eslint-plugin";
 import eslintConfigPrettier from "eslint-config-prettier/flat";
 import importPlugin from "eslint-plugin-import";
@@ -14,7 +15,14 @@ import globals from "globals";
 import tseslint from "typescript-eslint";
 
 export default tseslint.config(
-  { ignores: ["dist", "vite.config.ts"] },
+  {
+    ignores: [
+      "dist",
+      "vite.config.ts",
+      "src/vite-env.d.ts",
+      "public/mockServiceWorker.js"
+    ]
+  },
   {
     extends: [
       js.configs.recommended,
@@ -26,7 +34,8 @@ export default tseslint.config(
       importPlugin.flatConfigs.typescript,
       promisePlugin.configs["flat/recommended"],
       jsxA11yPlugin.flatConfigs.recommended,
-      jsdocPlugin.configs["flat/recommended-typescript"]
+      jsdocPlugin.configs["flat/recommended-typescript"],
+      ...queryPlugin.configs["flat/recommended"]
     ],
     files: ["**/*.{ts,tsx}"],
     languageOptions: {

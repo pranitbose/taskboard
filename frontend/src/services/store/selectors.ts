@@ -1,6 +1,6 @@
 import type { AppState } from "@app/types/store";
 
 const selectAccessToken = (state: AppState) => state.auth.accessToken;
-const selectSetAccessToken = (state: AppState) => state.auth.setAccessToken;
+const selectSetTokens = (state: AppState) => state.auth.setTokens;
 
-export { selectAccessToken, selectSetAccessToken };
+export { selectAccessToken, selectSetTokens };
