@@ -1,5 +1,5 @@
 import type { AuthTokens } from "../types/tokens";
-import type { AuthenticatedUser } from "../validators/authenticated-user-schema";
+import type { AuthenticatedUser } from "../types/user";
 
 type AuthSliceState = {
   accessToken: string | null;

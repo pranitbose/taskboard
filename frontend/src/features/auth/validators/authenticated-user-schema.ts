@@ -12,13 +12,9 @@ const userRoleSchema = z.object({
 });
 
 const authenticatedUserSchema = z.object({
-  currentRole: userRoleSchema,
-  userRoles: z.array(userRoleSchema),
-  userId: z.string(),
-  firstName: z.string(),
-  lastName: z.string()
+  workspaceId: z.string(),
+  role: userRoleSchema,
+  userId: z.string()
 });
 
-type AuthenticatedUser = z.infer<typeof authenticatedUserSchema>;
-
-export { authenticatedUserSchema, type AuthenticatedUser };
+export { authenticatedUserSchema };

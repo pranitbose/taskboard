@@ -8,10 +8,10 @@
   "license": "MIT",
   "scripts": {
     "dev": "vite --port 8080",
-    "dev:local": "vite --port 8080 --mode localhost && pnpm msw:init",
+    "dev:local": "pnpm msw:init && vite --port 8080 --mode localhost",
     "dev:test": "vite --port 8080 --mode test",
     "build": "tsc -b && vite build",
-    "build:local": "tsc -b && vite build --mode localhost && pnpm msw:init",
+    "build:local": "pnpm msw:init && tsc -b && vite build --mode localhost",
     "build:dev": "tsc -b && vite build --mode development",
     "build:test": "tsc -b && vite build --mode test",
     "lint": "eslint .",

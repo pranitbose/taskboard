@@ -1,11 +1,15 @@
-import { verifyDecodeJwtToken } from "@app/features/auth/utils/jwt-token-helper";
 import type { StateSlice } from "@app/types/store";
 import { sessionStorage, SessionStorageKeys } from "@services/web-store";
 import type { AuthSlice } from "../../types/auth-slice";
+import { verifyDecodeJwtToken } from "../../utils/jwt-token-helper";
+
+const persistedRefreshToken = sessionStorage.get(
+  SessionStorageKeys.REFRESH_TOKEN
+);
 
 const createAuthSlice: StateSlice<AuthSlice> = set => ({
   accessToken: null,
-  refreshToken: null,
+  refreshToken: persistedRefreshToken,
   user: null,
   setTokens: authTokens => {
     set(state => {

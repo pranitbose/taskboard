@@ -33,4 +33,13 @@ const register = async (formValues: SignUpFormValues): Promise<AuthTokens> => {
   return mapAuthResponse(response);
 };
 
-export { login, register };
+const refreshToken = async (refreshToken: string): Promise<AuthTokens> => {
+  const response = await apiClient.post<AuthResponse>(
+    AuthApiEndpoints.REFRESH_TOKEN,
+    { refreshToken },
+    { schema: AuthResponseSchema }
+  );
+  return mapAuthResponse(response);
+};
+
+export { login, refreshToken, register };

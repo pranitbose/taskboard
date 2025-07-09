@@ -1,2 +1,2 @@
-export { login, register } from "./auth";
+export { login, refreshToken, register } from "./auth";
 export { AuthApiEndpoints } from "./endpoints";
